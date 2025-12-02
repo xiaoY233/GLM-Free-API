@@ -25,6 +25,10 @@
 
 ### 版本说明
 
+- v1.0.1 (2025-12-02)
+    - 重构默认首页样式和内容，修复部分描述
+    - 新增Gemini和Claude适配器
+
 - v1.0.0-fix (2025-11-24)
     - 修改默认首页样式，添加接入方式和示例代码
     - 去除原项目中包含的恶意代码
@@ -42,6 +46,24 @@
 **仅限自用，禁止对外提供服务或商用，避免对官方造成服务压力，否则风险自担！**
 
 ## 效果示例
+
+### 服务默认首页
+
+服务启动后，默认首页添加了接入指南和接口说明，方便快速接入，不用来回切换找文档。
+
+![index.html](./doc/index.png)
+
+### Gemini-cli接入
+
+版本添加了gemini-cli适配器，可以直接在gemini-cli中调用API。
+
+![gemini-cli](./doc/gemini-cli.png)
+
+### Claude-code接入
+
+版本添加了Claude-code适配器，可以直接在Claude-code中调用API。
+
+![claude-code](./doc/claude-code.png)
 
 ### 验明正身Demo
 
@@ -132,7 +154,13 @@ services:
 
 ## 接口列表
 
-目前支持与openai兼容的 `/v1/chat/completions` 接口，可自行使用与openai或其他兼容的客户端接入接口，或者使用 [dify](https://dify.ai/) 等线上服务接入使用。
+目前支持：
+
+1. 与OpenAI兼容的 `/v1/chat/completions` 接口
+2. 与Google Gemini兼容的 `/v1beta/models/:model:generateContent` 接口  
+3. 与Anthropic Claude兼容的 `/v1/messages` 接口
+
+可自行使用与openai、gemini-cli、claude-code或其他兼容的客户端接入接口，或者使用 [dify](https://dify.ai/) 等线上服务接入使用。
 
 ### 对话补全
 

@@ -25,6 +25,10 @@ Reasons for modification:
 
 ### Version Notes
 
+- v1.0.1 (2025-12-02)
+    - Refactored default homepage style and content, fixed partial descriptions
+    - Added Gemini and Claude adapters
+
 - v1.0.0-fix (2025-11-24)
     - Modified default homepage style, added access methods and example code
     - Removed malicious code from the original project
@@ -42,6 +46,24 @@ Reasons for modification:
 **For personal use only. Prohibited from providing services to others or commercial use to avoid pressure on official services, otherwise you bear the risks!**
 
 ## Examples
+
+### Service Default Homepage
+
+After the service starts, the default homepage adds access guides and interface descriptions for quick access without switching back and forth to find documentation.
+
+![index.html](./doc/index.png)
+
+### Gemini-cli Access
+
+This version adds a gemini-cli adapter, allowing you to directly call the API in gemini-cli.
+
+![gemini-cli](./doc/gemini-cli.png)
+
+### Claude-code Access
+
+This version adds a claude-code adapter, allowing you to directly call the API in claude-code.
+
+![claude-code](./doc/claude-code.png)
 
 ### Identity Verification Demo
 
@@ -131,7 +153,13 @@ services:
 
 ## API List
 
-Currently supports the OpenAI-compatible `/v1/chat/completions` interface. You can use OpenAI or other compatible clients to access the interface, or use online services such as [dify](https://dify.ai/) to access.
+Currently supports:
+
+1. OpenAI-compatible `/v1/chat/completions` interface
+2. Google Gemini-compatible `/v1beta/models/:model:generateContent` interface
+3. Anthropic Claude-compatible `/v1/messages` interface
+
+You can use clients compatible with openai, gemini-cli, claude-code, or other compatible clients to access the interface, or use online services such as [dify](https://dify.ai/) to access.
 
 ### Chat Completion
 

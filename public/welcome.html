@@ -1,379 +1,505 @@
+<!-- index.html — Tech Light Theme v2 (Flat blocks + Timeline, No background images) -->
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>🚀 GLM-FREE-API</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            
-            body { 
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; 
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                min-height: 100vh;
-                padding: 20px;
-                line-height: 1.6;
-                color: #333;
-            }
-            
-            .container {
-                max-width: 900px;
-                margin: 0 auto;
-                background: rgba(255, 255, 255, 0.95);
-                border-radius: 20px;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-                backdrop-filter: blur(10px);
-                overflow: hidden;
-            }
-            
-            .header {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                padding: 40px;
-                text-align: center;
-            }
-            
-            .header h1 {
-                font-size: 2.5em;
-                margin-bottom: 10px;
-                font-weight: 300;
-            }
-            
-            .content {
-                padding: 40px;
-            }
-            
-            h2 {
-                color: #4a5568;
-                margin: 30px 0 20px 0;
-                font-size: 1.8em;
-                font-weight: 600;
-                position: relative;
-                padding-left: 20px;
-            }
-            
-            h2::before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 4px;
-                height: 30px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                border-radius: 2px;
-            }
-            
-            h3 {
-                color: #2d3748;
-                margin-bottom: 15px;
-                font-size: 1.4em;
-                font-weight: 600;
-            }
-            
-            h4 {
-                color: #4a5568;
-                margin-bottom: 15px;
-                font-size: 1.2em;
-                font-weight: 600;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
-            
-            .warning { 
-                background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
-                border: 1px solid #feb2b2;
-                border-left: 5px solid #e53e3e;
-                border-radius: 12px; 
-                padding: 25px; 
-                margin: 25px 0;
-                box-shadow: 0 4px 12px rgba(229, 62, 62, 0.1);
-            }
-            
-            .warning h3 {
-                color: #c53030;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                margin-bottom: 15px;
-            }
-            
-            .warning p {
-                margin-bottom: 10px;
-                color: #742a2a;
-                line-height: 1.7;
-            }
-            
-            .method { 
-                background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-                border: 1px solid #e2e8f0;
-                border-radius: 12px; 
-                padding: 25px; 
-                margin: 20px 0;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                transition: all 0.3s ease;
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .method::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 3px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            }
-            
-            .method:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            }
-            
-            .method h4 {
-                color: #2d3748;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-            
-            .method-icon {
-                width: 24px;
-                height: 24px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                border-radius: 6px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-weight: bold;
-                font-size: 12px;
-            }
-            
-            .step-list {
-                list-style: none;
-                padding: 0;
-            }
-            
-            .step-list li {
-                background: white;
-                margin: 10px 0;
-                padding: 15px 20px;
-                border-radius: 8px;
-                border-left: 4px solid #667eea;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-                transition: all 0.3s ease;
-            }
-            
-            .step-list li:hover {
-                transform: translateX(5px);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            }
-            
-            .token { 
-                background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
-                color: #234e52;
-                padding: 8px 12px; 
-                border-radius: 6px; 
-                font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-                font-size: 0.9em;
-                border: 1px solid #81e6d9;
-                display: inline-block;
-                margin: 2px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            }
-            
-            img { 
-                max-width: 100%; 
-                height: auto; 
-                border-radius: 12px;
-                margin: 15px 0;
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease;
-            }
-            
-            img:hover {
-                transform: scale(1.02);
-            }
-            
-            .client-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 15px;
-                margin: 20px 0;
-            }
-            
-            .client-card {
-                background: white;
-                padding: 20px;
-                border-radius: 12px;
-                text-align: center;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                transition: all 0.3s ease;
-                border: 2px solid transparent;
-            }
-            
-            .client-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-                border-color: #667eea;
-            }
-            
-            .client-card strong {
-                color: #4a5568;
-                font-size: 1.1em;
-            }
-            
-            .api-info {
-                background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
-                border: 1px solid #9ae6b4;
-                border-radius: 12px;
-                padding: 20px;
-                margin: 20px 0;
-                text-align: center;
-            }
-            
-            .api-info code {
-                background: rgba(255, 255, 255, 0.8);
-                padding: 8px 16px;
-                border-radius: 6px;
-                font-size: 1.1em;
-                color: #22543d;
-                border: 1px solid #9ae6b4;
-            }
-            
-            a {
-                color: #667eea;
-                text-decoration: none;
-                transition: color 0.3s ease;
-            }
-            
-            a:hover {
-                color: #764ba2;
-                text-decoration: underline;
-            }
-            
-            .highlight-box {
-                background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
-                border: 1px solid #90cdf4;
-                border-radius: 8px;
-                padding: 15px;
-                margin: 15px 0;
-            }
-            
-            @media (max-width: 768px) {
-                .container {
-                    margin: 10px;
-                    border-radius: 15px;
-                }
-                
-                .header {
-                    padding: 30px 20px;
-                }
-                
-                .header h1 {
-                    font-size: 2em;
-                }
-                
-                .content {
-                    padding: 30px 20px;
-                }
-                
-                .client-grid {
-                    grid-template-columns: 1fr;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1>🚀 GLM-FREE-API</h1>
-                <p>智谱GLM免费API代理服务</p>
-            </div>
-            
-            <div class="content">
-                <div class="warning">
-                    <h3>⚠️ 免责声明</h3>
-                    <p><strong>逆向API是不稳定的，建议前往智谱AI官方 <a href="https://open.bigmodel.cn/" target="_blank">https://open.bigmodel.cn/</a> 付费使用API，避免封禁的风险。</strong></p>
-                    <p><strong>本组织和个人不接受任何资金捐助和交易，此项目是纯粹研究交流学习性质！</strong></p>
-                    <p><strong>仅限自用，禁止对外提供服务或商用，避免对官方造成服务压力，否则风险自担！</strong></p>
-                    <p><strong>仅限自用，禁止对外提供服务或商用，避免对官方造成服务压力，否则风险自担！</strong></p>
-                    <p><strong>仅限自用，禁止对外提供服务或商用，避免对官方造成服务压力，否则风险自担！</strong></p>
-                </div>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GLM Free API — 服务已启动</title>
+  <style>
+    /* ===== Theme Variables ===== */
+    :root{
+      --bg:#F7FAFF;
+      --surface:#FFFFFF;
+      --text:#111827;
+      --muted:#4B5563;
+      --subtle:#6B7280;
+      --border:#D7E2F3;
+      --primary:#667eea;
+      --primary-2:#764ba2;
+      --accent:#0EA5E9;
+      --success:#10B981;
+      --warning:#EF4444;
 
-                <h2>📋 接入准备</h2>
-                
-                <div class="method">
-                    <h4>
-                        <div class="method-icon">1</div>
-                        从智谱清言获取Token
-                    </h4>
-                    <ul class="step-list">
-                        <li>从 <a href="https://chatglm.cn/main/alltoolsdetail" target="_blank">智谱清言</a> 登录</li>
-                        <li>进入智谱清言随便发起一个对话</li>
-                        <li>F12打开开发者工具，从 Application > Cookies 中找到 <span class="token">chatglm_token</span> 的值</li>
-                        <li>这将作为Authorization的Bearer Token值：<span class="token">Authorization: Bearer TOKEN</span></li>
-                    </ul>
-                    <img src="https://cdn.jsdelivr.net/gh/xiaoY233/GLM-Free-API@master/doc/example-0.png" alt="获取chatglm_token">
-                </div>
+      --radius-lg:14px;
+      --radius-md:10px;
+      --radius-sm:8px;
 
-                <div class="method">
-                    <h4>
-                        <div class="method-icon">2</div>
-                        从智谱开放平台获取Token
-                    </h4>
-                    <ul class="step-list">
-                        <li>从 <a href="https://open.bigmodel.cn/" target="_blank">智谱开放平台</a> 登录（如果该账号有服务器等重要资产不建议使用）</li>
-                        <li>如果该账号之前未进入过 <a href="https://chatglm.cn/main/alltoolsdetail" target="_blank">智谱清言</a>，需要先进入同意协议，否则无法生效</li>
-                        <li>F12打开开发者工具，从 Application > Cookies 中找到 <span class="token">glm_token</span> 的值</li>
-                        <li>这将作为Authorization的Bearer Token值：<span class="token">Authorization: Bearer TOKEN</span></li>
-                    </ul>
-                    <img src="https://cdn.jsdelivr.net/gh/xiaoY233/GLM-Free-API@master/doc/example-1.png" alt="获取glm_token">
-                </div>
+      --shadow-1:0 2px 0 rgba(17,24,39,0.04);
+      --shadow-2:0 6px 14px rgba(17,24,39,0.06);
 
-                <div class="method">
-                    <h4>
-                        <div class="method-icon">⚡</div>
-                        多账号接入
-                    </h4>
-                    <div class="highlight-box">
-                        <p>你可以通过提供多个账号的 <span class="token">chatglm_token</span> 或 <span class="token">glm_token</span>，并使用 <span class="token">,</span> 拼接提供：</p>
-                        <p><span class="token">Authorization: Bearer TOKEN1,TOKEN2,TOKEN3</span></p>
-                        <p>每次请求服务会从中挑选一个。</p>
-                    </div>
-                </div>
+      --grid:24px;
+    }
 
-                <h2>🐳 推荐客户端</h2>
-                <div class="client-grid">
-                    <div class="client-card">
-                        <strong>💬 LobeChat</strong>
-                        <p>推荐的现代化聊天界面</p>
-                    </div>
-                    <div class="client-card">
-                        <strong>⚡ NextChat</strong>
-                        <p>简洁的多平台客户端</p>
-                    </div>
-                    <div class="client-card">
-                        <strong>🔧 Dify</strong>
-                        <p>AI应用开发平台</p>
-                    </div>
-                    <div class="client-card">
-                        <strong>💻 OpenAI SDK</strong>
-                        <p>直接编程接入</p>
-                    </div>
-                </div>
-                
-                <div class="api-info">
-                    <h3>🔗 支持的接口</h3>
-                    <p><code>/v1/chat/completions</code> <small>(与OpenAI兼容)</small></p>
-                </div>
-            </div>
+    /* ===== Reset ===== */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",system-ui,sans-serif;
+      color:var(--text);
+      line-height:1.7;
+      background: linear-gradient(180deg,var(--bg),#F5F8FF);
+    }
+    body::before{
+      content:"";
+      position:fixed; inset:0; pointer-events:none;
+      background-image:
+        linear-gradient(rgba(17,24,39,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,24,39,0.015) 1px, transparent 1px);
+      background-size:var(--grid) var(--grid), var(--grid) var(--grid);
+      mix-blend-mode:multiply;
+    }
+
+    /* ===== Layout ===== */
+    .shell{max-width:1120px;margin:0 auto;padding:0 24px}
+
+    /* ===== Nav ===== */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background:rgba(247,250,255,0.88);
+      backdrop-filter:saturate(1.05) blur(8px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav .shell{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .logo{
+      width:26px;height:26px;border-radius:6px;
+      background:linear-gradient(135deg,var(--primary),var(--primary-2));
+    }
+    .nav-links{display:flex;gap:16px}
+    .nav-links a{
+      color:var(--muted); text-decoration:none; font-weight:600;
+      padding:8px 10px; border-radius:8px;
+      transition:background-color .15s ease, color .15s ease;
+    }
+    .nav-links a:hover{color:var(--text); background:#EEF4FF}
+    .cta{display:flex;gap:10px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      height:36px; padding:0 14px; border-radius:10px; border:1px solid var(--border);
+      background:var(--surface); color:var(--text); font-weight:700;
+      box-shadow:var(--shadow-1); text-decoration:none; cursor:pointer;
+      transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:var(--shadow-2); border-color:#C9D8EE}
+    .btn.primary{background:linear-gradient(90deg,var(--primary),var(--primary-2)); color:#fff; border:none}
+
+    /* ===== Hero ===== */
+    .hero{padding:36px 0 18px}
+    .hero-inner{
+      display:grid; grid-template-columns:1fr; gap:18px;
+      align-items:center;
+    }
+    .hero-title{margin:0 0 8px; font-size:clamp(28px,4.2vw,42px); font-weight:900; letter-spacing:.2px}
+    .hero-desc{color:var(--muted); margin:0 0 16px}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .stats{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
+    .stat{
+      display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--border);
+      border-radius:10px;background:#FAFCFF;font-weight:700;color:#1F2937;
+    }
+    .stat .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+    /* ===== Sections ===== */
+    .section{margin:24px 0}
+    .hd{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:10px}
+    .hd h2{margin:0; font-size:20px; font-weight:800; letter-spacing:.1px}
+    .hd p{margin:0;color:var(--subtle)}
+    .grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
+    @media (max-width:1024px){ .grid{grid-template-columns:repeat(3,1fr)} }
+    @media (max-width:768px){ .grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:520px){ .grid{grid-template-columns:1fr} }
+
+    /* ===== Flat Blocks ===== */
+    .block{
+      border:1px solid var(--border);
+      background:var(--surface);
+      border-radius:var(--radius-md);
+      padding:14px 16px;
+      transition:border-color .12s ease, background-color .12s ease;
+    }
+    .block:hover{border-color:#C9D8EE; background:#FBFDFF}
+    .block h3{margin:0 0 6px; font-size:16px; font-weight:800}
+    .block p{margin:0; color:var(--muted); font-size:14px}
+    .block .line{
+      width:100%; height:6px; border-radius:4px; margin-bottom:10px;
+      background:linear-gradient(90deg,var(--primary),var(--primary-2));
+    }
+
+    /* ===== Timeline ===== */
+    .timeline{
+      position:relative; padding-left:28px;
+      border-left:2px solid var(--border);
+    }
+    .step{ margin:0 0 18px; position:relative; }
+    .step::before{
+      content:""; position:absolute; left:-10px; top:2px;
+      width:10px; height:10px; border-radius:50%;
+      background:var(--primary); box-shadow:0 0 0 3px #E7F0FF;
+    }
+    .step h3{margin:0 0 6px; font-size:16px; font-weight:800}
+    .step p{margin:0 0 8px; color:var(--muted)}
+    .code{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,"Cascadia Code","Roboto Mono",Consolas,"Courier New";
+      font-size:13px; color:#0F172A; background:#F7FAFF;
+      border:1px solid var(--border); border-radius:var(--radius-sm);
+      padding:10px 12px; overflow:auto;
+    }
+
+    /* ===== API Grid ===== */
+    .api-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+    @media (max-width:900px){ .api-grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:640px){ .api-grid{grid-template-columns:1fr} }
+    .api-item .path{font-family:ui-monospace,Menlo,Consolas; font-size:13px; color:#1F2937}
+    .tag{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:4px 8px; border:1px solid var(--border); border-radius:999px;
+      background:#F2F7FF; color:#1F2937; font-weight:700; font-size:12px; margin-top:8px;
+    }
+    .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+    /* ===== Models & Ecosystem ===== */
+    .label{color:var(--subtle); font-weight:700; font-size:12px; margin-top:6px}
+
+    /* ===== Warning ===== */
+    .warn{
+      border:1px solid #FAD1D6;
+      border-left:4px solid var(--warning);
+      background:#FFF7F7;
+      border-radius:var(--radius-md);
+      padding:14px 16px;
+    }
+    .warn h3{margin:0 0 6px; color:#8B1C24}
+    .warn p{margin:0; color:#6B1A20}
+
+    /* ===== Service Status (14px) ===== */
+    .service-status{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      background:#EAF7EF;
+      border:1px solid #CDE9D6;
+      border-left:4px solid #4CAF50;
+      color:#1F5E2E;
+      padding:14px 16px;                /* 恰配 14px 字号 */
+      font-weight:800;
+      position:sticky;
+      top:0;
+      z-index:100;
+      margin-top:12px;                   /* 与顶部增加间距 */
+      margin-bottom:0;
+      border-radius:10px;
+      box-shadow:0 6px 14px rgba(17,24,39,0.06);
+      transform:translateY(-120%);       /* 初始隐藏 */
+      opacity:0;
+      transition:transform .36s cubic-bezier(0.22, 1, 0.36, 1), opacity .24s ease;
+    }
+    .service-status.visible{
+      transform:translateY(0);
+      opacity:1;
+    }
+    .service-status:hover{
+      box-shadow:0 10px 22px rgba(17,24,39,0.08);
+    }
+    .service-status .status-dot{
+      width:10px;
+      height:10px;
+      background:#4CAF50;
+      border-radius:50%;
+      display:inline-block;
+      margin-right:6px;
+      animation:pulse 2s infinite;
+      box-shadow:0 0 0 3px rgba(76,175,80,0.16);
+    }
+    .service-status .label{
+      font-weight:800;
+      color:#1F5E2E;
+      letter-spacing:0.2px;
+      font-size:14px;                    /* 按要求设置为 14px */
+      line-height:1.3;
+    }
+    .service-status .close-btn{
+      position:absolute;
+      right:12px;
+      top:50%;
+      transform:translateY(-50%);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:28px; height:28px;
+      border-radius:8px;
+      border:1px solid #CDE9D6;
+      background:#F4FBF6;
+      color:#2E7D32;
+      cursor:pointer;
+      font-weight:800;
+      font-size:16px;
+      line-height:1;
+      transition:background-color .15s ease, border-color .15s ease, transform .12s ease;
+    }
+    .service-status .close-btn:hover{
+      background:#E6F6EC;
+      border-color:#BEE3CA;
+      transform:translateY(-50%) scale(1.02);
+    }
+    @keyframes pulse{
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    /* ===== Custom GLM Styles ===== */
+    .token-display{
+      background:linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
+      color:#234e52;
+      padding:6px 10px; 
+      border-radius:6px; 
+      font-family:'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+      font-size:12px;
+      border:1px solid #81e6d9;
+      display:inline-block;
+      margin:2px;
+      box-shadow:0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .method-step{
+      background:#FAFCFF;
+      border:1px solid var(--border);
+      border-radius:var(--radius-md);
+      padding:16px;
+      margin:12px 0;
+      transition:all .12s ease;
+    }
+    .method-step:hover{
+      border-color:#C9D8EE;
+      background:#FBFDFF;
+    }
+    .method-step h4{
+      margin:0 0 8px;
+      font-size:15px;
+      font-weight:800;
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .method-number{
+      width:24px;height:24px;border-radius:6px;
+      background:linear-gradient(135deg,var(--primary),var(--primary-2));
+      color:white;display:flex;align-items:center;justify-content:center;
+      font-size:12px;font-weight:800;
+    }
+    .method-step ul{
+      margin:8px 0 0 0;padding-left:0;list-style:none;
+    }
+    .method-step li{
+      padding:6px 0;color:var(--muted);font-size:14px;
+      position:relative;padding-left:16px;
+    }
+    .method-step li::before{
+      content:"•";position:absolute;left:0;color:var(--primary);font-weight:800;
+    }
+    .method-step img{
+      max-width:100%;height:auto;border-radius:8px;margin:12px 0;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="shell">
+    <!-- Service Status -->
+    <div class="service-status" id="serviceStatus" role="status" aria-live="polite">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span class="label">GLM-Free-API 服务已启动，请使用客户端进行连接</span>
+      <button class="close-btn" id="serviceStatusClose" aria-label="关闭提示" title="关闭提示">×</button>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <h1 class="hero-title">面向开发者的 GLM API 代理</h1>
+          <p class="hero-desc">兼容 OpenAI 协议，稳定流式、多轮上下文与检索。工程语义清晰、易接入、可维护。</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#guide">快速接入</a>
+            <a class="btn" href="#apis">查看接口</a>
+          </div>
         </div>
-    </body>
+      </div>
+    </section>
+
+    <!-- Warning -->
+    <section class="section">
+      <div class="warn">
+        <h3>⚠️ 免责声明</h3>
+        <p><strong>逆向 API 存在不稳定性。建议前往 <a href="https://open.bigmodel.cn/" target="_blank" rel="noreferrer">智谱开放平台</a> 付费使用，避免封禁风险。</strong></p>
+        <p><strong>本项目仅用于研究学习，不接受任何资金往来。仅限自用，禁止商用或对外提供服务。</strong></p>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <div class="hd">
+        <h2>核心特性</h2>
+      </div>
+      <div class="grid">
+        <div class="block">
+          <div class="line" aria-hidden="true"></div>
+          <h3>流式输出</h3>
+          <p>毫秒级首字节，边生成边传输，提升交互性能（SSE/Web/CLI）。</p>
+        </div>
+        <div class="block">
+          <div class="line" aria-hidden="true"></div>
+          <h3>多轮对话</h3>
+          <p>上下文记忆与压缩，保证长对话的稳定响应（Token 管理与截断策略）。</p>
+        </div>
+        <div class="block">
+          <div class="line" aria-hidden="true"></div>
+          <h3>联网检索</h3>
+          <p>实时信息聚合，提升回答的时效与准确性（可插拔 Provider）。</p>
+        </div>
+        <div class="block">
+          <div class="line" aria-hidden="true"></div>
+          <h3>GLM 生态</h3>
+          <p>深度集成智谱 AI 全家桶，支持 GLM-4 等先进模型。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guide: Timeline -->
+    <section id="guide" class="section">
+      <div class="hd">
+        <h2>接入指南</h2>
+      </div>
+      <div class="timeline">
+        <div class="step">
+          <h3>01 · 从智谱清言获取 Token</h3>
+          <p>登录 <a href="https://chatglm.cn/main/alltoolsdetail" target="_blank" rel="noreferrer">智谱清言</a>，随机发起一个对话，打开浏览器F12工具，在 Application › Cookies 中找到 chatglm_token。</p>
+          <pre class="code">Authorization: Bearer YOUR_CHATGLM_TOKEN</pre>
+          <img src="https://cdn.jsdelivr.net/gh/xiaoY233/GLM-Free-API@master/doc/example-0.png" alt="获取chatglm_token" style="max-width: 100%; height: auto;">
+        </div>
+        <div class="step">
+          <h3>02 · 智能体接入（可选）</h3>
+          <p>打开智能体的聊天界面，地址栏的一串ID就是智能体的ID，复制下来备用，这个值将用作调用时的 <code>model</code> 参数值。</p>
+          <img src="https://cdn.jsdelivr.net/gh/xiaoY233/GLM-Free-API@master/doc/example-11.png" alt="获取智能体ID" style="max-width: 100%; height: auto;">
+        </div>
+        <div class="step">
+          <h3>03 · 多账号轮询</h3>
+          <p>将多个 Token 用逗号拼接，服务自动挑选一个执行。</p>
+          <pre class="code">Authorization: Bearer TOKEN1,TOKEN2,TOKEN3</pre>
+        </div>
+        <div class="step">
+          <h3>04 · 选择客户端或 SDK</h3>
+          <p>推荐使用 LobeChat / NextChat / Dify 或直接使用 OpenAI SDK。</p>
+          <pre class="code">curl -X POST /v1/chat/completions \
+  -H "Authorization: Bearer YOUR_USER_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{ "model":"glm-4", "messages":[{"role":"user","content":"Hello"}] }'</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- APIs -->
+    <section id="apis" class="section">
+      <div class="hd">
+        <h2>接口兼容性</h2>
+      </div>
+      <div class="api-grid">
+        <div class="block api-item">
+          <h3>OpenAI 兼容</h3>
+          <div class="path">/v1/chat/completions</div>
+          <span class="tag"><span class="dot"></span> 推荐</span>
+        </div>
+        <div class="block api-item">
+          <h3>Google Gemini 兼容</h3>
+          <div class="path">/v1beta/models/:model:generateContent</div>
+          <span class="tag"><span class="dot"></span> gemini-cli</span>
+        </div>
+        <div class="block api-item">
+          <h3>Anthropic Claude 兼容</h3>
+          <div class="path">/v1/messages</div>
+          <span class="tag"><span class="dot"></span> claude-code</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Models -->
+    <section id="models" class="section">
+      <div class="hd">
+        <h2>支持模型</h2>
+      </div>
+      <div class="grid">
+        <div class="block">
+          <div class="line" aria-hidden="true"></div>
+          <h3>GLM-4.6</h3>
+          <p>高智能旗舰 - 智谱最强性能，高级编码能力、强大推理以及工具调用能力</p>
+          <div class="label">用途 · 高性能推理 / 编码 / 工具调用</div>
+        </div>
+        <div class="block">
+          <div class="line" aria-hidden="true"></div>
+          <h3>GLM-4.5</h3>
+          <p>超强性能 - 性能优秀，强大的推理能力、代码生成能力以及工具调用能力</p>
+          <div class="label">用途 · 推理 / 代码生成 / 智能体</div>
+        </div>
+        <div class="block">
+          <div class="line" aria-hidden="true"></div>
+          <h3>GLM-4.5-X</h3>
+          <p>超强性能-极速版 - 推理速度更快，适用于搜索问答、智能助手、实时翻译等时效性较强场景</p>
+          <div class="label">用途 · 快速问答 / 实时翻译 / 智能助手</div>
+        </div>
+        <div class="block">
+          <div class="line" aria-hidden="true"></div>
+          <h3>GLM-4.5-Air</h3>
+          <p>高性价比 - 在推理、编码和智能体任务上表现强劲</p>
+          <div class="label">用途 · 高性价比 / 推理 / 编码</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ecosystem -->
+    <section id="ecosystem" class="section">
+      <div class="hd">
+        <h2>客户端生态</h2>
+        <p>覆盖聊天、命令行与应用开发场景。</p>
+      </div>
+      <div class="grid">
+        <div class="block"><h3>LobeChat</h3><p>现代化聊天界面。</p></div>
+        <div class="block"><h3>NextChat</h3><p>简洁多平台客户端。</p></div>
+        <div class="block"><h3>Dify</h3><p>AI 应用开发平台。</p></div>
+        <div class="block"><h3>OpenAI SDK</h3><p>直接编程接入。</p></div>
+        <div class="block"><h3>ChatBox</h3><p>桌面端聊天工具。</p></div>
+        <div class="block"><h3>继续探索</h3><p>更多客户端持续适配中。</p></div>
+      </div>
+    </section>
+    <br></br>
+
+    <!-- footer 已删除 -->
+  </main>
+
+  <script>
+    // 加载时滑入显示；点击关闭后本次会话隐藏
+    (function(){
+      const bar = document.getElementById('serviceStatus');
+      const closeBtn = document.getElementById('serviceStatusClose');
+      if(!bar || !closeBtn) return;
+
+      // 页面渲染后滑入
+      requestAnimationFrame(() => {
+        bar.classList.add('visible');
+      });
+
+      // 关闭：移除可见样式并在过渡后隐藏
+      closeBtn.addEventListener('click', () => {
+        bar.classList.remove('visible');
+        const onEnd = () => {
+          bar.style.display = 'none';
+          bar.removeEventListener('transitionend', onEnd);
+        };
+        bar.addEventListener('transitionend', onEnd);
+      }, { passive: true });
+    })();
+  </script>
+</body>
 </html>

@@ -7,6 +7,8 @@ import videos from './videos.ts';
 import ping from "./ping.ts";
 import token from './token.js';
 import models from './models.ts';
+import claude from './claude.ts';
+import gemini from './gemini.ts';
 
 export default [
     {
@@ -23,6 +25,8 @@ export default [
         }
     },
     chat,
+    claude,
+    gemini,
     images,
     videos,
     ping,
