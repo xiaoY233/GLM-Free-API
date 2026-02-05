@@ -3,32 +3,25 @@ import _ from 'lodash';
 // 支持的模型列表，基于官方API返回的模型
 const SUPPORTED_MODELS = [
     {
+        "id": "glm-4.7",
+        "name": "GLM-4.7",
+        "object": "model",
+        "owned_by": "glm-free-api",
+        "description": "高智能旗舰 - 通用对话、推理与智能体能力上实现全面升级 - 编程更强、更稳、审美更好"
+    },
+    {
+        "id": "glm-4.6v",
+        "name": "GLM-4.6v",
+        "object": "model",
+        "owned_by": "glm-free-api",
+        "description": "超强性能 - 上下文提升至200K - 高级编码能力、强大推理以及工具调用能力"
+    },
+    {
         "id": "glm-4.6",
         "name": "GLM-4.6",
         "object": "model",
         "owned_by": "glm-free-api",
-        "description": "高智能旗舰 - 智谱最强性能，高级编码能力、强大推理以及工具调用能力"
-    },
-    {
-        "id": "glm-4.5",
-        "name": "GLM-4.5",
-        "object": "model",
-        "owned_by": "glm-free-api",
-        "description": "超强性能 - 性能优秀，强大的推理能力、代码生成能力以及工具调用能力"
-    },
-    {
-        "id": "glm-4.5-x",
-        "name": "GLM-4.5-X",
-        "object": "model",
-        "owned_by": "glm-free-api",
-        "description": "超强性能-极速版 - 推理速度更快，适用于搜索问答、智能助手、实时翻译等时效性较强场景"
-    },
-    {
-        "id": "glm-4.5-air",
-        "name": "GLM-4.5-Air",
-        "object": "model",
-        "owned_by": "glm-free-api",
-        "description": "高性价比 - 在推理、编码和智能体任务上表现强劲"
+        "description": "超强性能 - 上下文提升至200K - 高级编码能力、强大推理以及工具调用能力"
     }
 ];
 
