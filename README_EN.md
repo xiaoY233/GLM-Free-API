@@ -25,13 +25,23 @@ Reasons for modification:
 
 ### Version Notes
 
+- v1.0.2 (2025-02-05)
+    - Updated model list, added GLM-4.7, GLM-4.6v, GLM-4.6
+    - Removed GLM-4.5 series models (deprecated)
+    - Merged PR #2 and fixed security issues
+    - Support configuring SIGN_SECRET from environment variables with format validation
+    - Added User-Agent pool and randomization to reduce risk control
+    - Added reasoning_content field to support reasoning process
+    - Optimized streaming response handling, using TextDecoder to prevent multi-byte character truncation
+    - Improved search result caching mechanism to avoid duplicate content
+
 - v1.0.1 (2025-12-02)
     - Refactored default homepage style and content, fixed partial descriptions
     - Added Gemini and Claude adapters
 
 - v1.0.0-fix (2025-11-24)
     - Modified default homepage style, added access methods and example code
-    - Removed malicious code from the original project
+    - Removed malicious code from original project
 
 ## Disclaimer
 
